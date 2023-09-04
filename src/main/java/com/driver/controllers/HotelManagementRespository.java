@@ -27,6 +27,7 @@ public class HotelManagementRespository {
             return false;
         }
         hotelDB.put(hotel.getHotelName(),hotel);
+
         List<Facility>ans = hotel.getFacilities();
         hotelfDB.put(hotel.getHotelName(),ans);
         return true;
@@ -38,7 +39,7 @@ public class HotelManagementRespository {
     public String small(String a,String b){
         if (a.compareTo(b) == 0)
             return a;
-        else if (a.compareTo(b)==1) {
+        else if (a.compareTo(b)==       1) {
             return a;
         }else
             return b;
@@ -57,6 +58,7 @@ public class HotelManagementRespository {
             }
         }
         return hotelname;
+
     }
     public int bookARoom(Booking booking){
         Hotel hotel = hotelDB.get(booking.getHotelName());
