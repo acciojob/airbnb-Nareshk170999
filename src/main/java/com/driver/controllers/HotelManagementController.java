@@ -53,7 +53,7 @@ public class HotelManagementController {
         return ans;
     }
 
-    @PostMapping("/bookroom") // 5 - Post Request
+    @PostMapping("/book-a-room") // 5 - Post Request
     public int bookARoom(@RequestBody Booking booking){
 
         //The booking object coming from postman will have all the attributes except bookingId and amountToBePaid;
@@ -66,7 +66,7 @@ public class HotelManagementController {
         return ans;
     }
     
-    @GetMapping("/get-bookings-by-person/{aadharCard}") //Get - Request
+    @GetMapping("/get-bookings-by-a-person/{aadharCard}") //Get - Request
     public int getBookings(@PathVariable("aadharCard")Integer aadharCard)
     {
         //In this function return the bookings done by a person

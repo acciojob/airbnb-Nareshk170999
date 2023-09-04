@@ -38,7 +38,7 @@ public class HotelManagementRespository {
     public String small(String a,String b){
         if (a.compareTo(b) == 0)
             return a;
-        else if (a.compareTo(b)==-1) {
+        else if (a.compareTo(b)==1) {
             return a;
         }else
             return b;
@@ -62,7 +62,7 @@ public class HotelManagementRespository {
         Hotel hotel = hotelDB.get(booking.getHotelName());
         int a = hotel.getAvailableRooms();
         int b = booking.getNoOfRooms();
-        if (a >= b){
+        if (a > b){
             UUID uuid = UUID.randomUUID();
             String id = String.valueOf(uuid);
             int cash = hotel.getPricePerNight()*b;
@@ -70,7 +70,8 @@ public class HotelManagementRespository {
             booking.setAmountToBePaid(cash);
             bookDB.put(id,booking);
 
-            bookbyaadhar.put(booking.getBookingAadharCard(),bookbyaadhar.getOrDefault(booking.getBookingId(),0)+1);
+            bookbyaadhar.put(booking.getBookingAadharCard(),
+                    bookbyaadhar.getOrDefault(booking.getBookingId(),0));
             return cash;
         }
         return -1;

@@ -15,7 +15,7 @@ public class HotelManagementService {
     HotelManagementRespository hotelManagementRespository = new HotelManagementRespository();
 
   public String addHotel(Hotel hotel){
-      if (hotel.getHotelName()==null || hotel == null)
+      if (hotel==null)
           return "FAILURE";
       if (hotelManagementRespository.addHotel(hotel))
           return "SUCCESS";
