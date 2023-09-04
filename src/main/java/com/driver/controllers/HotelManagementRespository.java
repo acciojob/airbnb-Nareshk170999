@@ -78,7 +78,7 @@ public class HotelManagementRespository {
         }
         return -1;
     }
-    public int getBookings(Integer aadharCard){
+    public int getBooking(Integer aadharCard){
         if (bookbyaadhar.containsKey(aadharCard))
             return bookbyaadhar.get(aadharCard);
 
